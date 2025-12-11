@@ -12,3 +12,5 @@
    3.1. run `(dissoc (main/test-request :post "/todo") :headers)`  
 4. To view the database:  
    4.1 run `@main/database`  
+
+## First exercise: Create a default name
