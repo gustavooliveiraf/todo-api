@@ -16,3 +16,4 @@
 ## First exercise: Create a default name  "Nubank"
 1. Failed: {:status 201, :body "{:name nil, :items {}}"}  
 2. Fix it: {:status 201, :body "{:name "Nubank", :items {}}"}  
+* Tip: There are two interceptors "db-interceptor" and "list-create". But the db-interceptor is mocking a real db, everything is already done!  
