@@ -21,4 +21,4 @@
 ## Second exercise: Parse the name to Camel case  
 0. `(dissoc (main/test-request :post "/todo?name=Nubank_first") :headers)`  
 1. Failed: {:status 201, :body "{:name  "Nubank_first", :items {}}"}  
-2. Fix it: {:status 201, :body "{:name "nubankFirst", :items {}}"}  
+2. Fix it: {:status 201, :body "{:name "nubankFirst"}"}  
