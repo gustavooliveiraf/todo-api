@@ -13,4 +13,6 @@
 4. To view the database:  
    4.1 run `@main/database`  
 
-## First exercise: Create a default name
+## First exercise: Create a default name  "Nubank"
+1. Failed: {:status 201, :body "{:name nil, :items {}}"}  
+2. Fix it: {:status 201, :body "{:name "Nubank", :items {}}"}  
