@@ -18,7 +18,13 @@
 2. Fix it: {:status 201, :body "{:name "Nubank", :items {}}"}  
 * Tip: There are two interceptors "db-interceptor" and "list-create". But the db-interceptor is mocking a real db, everything is already done!  
 
-## Second exercise: Parse the name to Camel case using a new interceptor  
+## Second exercise: Parse the name to Camel case using a new interceptor
 0. `(dissoc (main/test-request :post "/todo?name=Nubank_first") :headers)`  
 1. Failed: {:status 201, :body "{:name  "Nubank_first", :items {}}"}  
 2. Fix it: {:status 201, :body "{:name "nubankFirst"}"}  
+  
+## Third exercise: Parse the name to Camel case using a new interceptor and the camel-snake-kebab library
+0. `(dissoc (main/test-request :post "/todo?name=Nubank_first_todo") :headers)`  
+1. Failed: {:status 201, :body "{:name  "Nubank_first_todo", :items {}}"}  
+2. Fix it: {:status 201, :body "{:name "nubankFirstTodo"}"}  
+* Tip: [doc](https://clj-commons.org/camel-snake-kebab/)  
