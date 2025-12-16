@@ -65,7 +65,8 @@
   {:name :list-create
    :enter
    (fn [context]
-       (let [throw-a-error (/ 10 0)]
+       (let [parse-name (.toString (get-in context [:request :query-params :name]))
+             divide-by-zero (/ 10 0)]
             context))})
 
 (def routes
