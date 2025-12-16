@@ -54,12 +54,21 @@
 
 ;;;
 ;;; API Interceptors
-;;;
 (def error-interceptor
   {:name :error-interceptor
    :error
    (fn [context exception]
-       context)})
+       (let [cause (or (.getCause exception) exception)]
+            (cond
+             (instance? ArithmeticException cause)
+             (assoc context :response
+                    {:status 400
+                     :body {:error "It's impossible to divide by zero."}})
+
+             :else
+             (assoc context :response
+                    {:status 500
+                     :body {:error "Erro interno"}}))))})
 
 (def list-create
   {:name :list-create
