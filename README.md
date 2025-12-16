@@ -47,6 +47,6 @@
 
 ## Eighth exercise: Catch the ArithmeticException error and return 400  
 0. `(dissoc (main/test-request :post "/todo?name=nubank") :headers)`  
-1. Failed: {:status 500, :body "Internal server error: exception"}  
+1. Failed: {:status 404, :body "Not Found"}  
 2. Fix it: {:status 400, :body "It's impossible to divide by zero."}  
-* Tip: Try to use instance? 
+* Tip: Try to use instance?  
