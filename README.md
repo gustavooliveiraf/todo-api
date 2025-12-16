@@ -38,3 +38,8 @@
 0. `(dissoc (main/test-request :post "/todo?name=nubank") :headers)`  
 1. Failed: {:status 201, :body "{:name  "nubank", :items {}}"}  
 2. Fix it: {:status 201, :body "{:name "nubank", nameCount 6}"}  
+
+## Seventh exercise: Changing the response
+0. `(dissoc (main/test-request :post "/todo?name=nubank") :headers)`  
+1. Failed: {:status 500, :body "{:error \"java.lang.Exception in Interceptor :list-create - Error in create list\"}"}  
+2. Fix it: {:status 500, :body "{:error \"Error in create list\"}"} 
