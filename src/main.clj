@@ -59,26 +59,18 @@
   {:name :error-interceptor
    :error
    (fn [context exception]
-       (assoc context
-              :response {:status 500
-                         :body   {:error (.getMessage exception)}}))})
+       context)})
 
 (def list-create
   {:name :list-create
    :enter
    (fn [context]
-       (throw (Exception. "Error in create list"))
-       (let [nm (get-in context [:request :query-params :name])
-             new-list (make-list nm)
-             db-id (str (gensym "l"))
-             url (route/url-for :list-view :params {:list-id db-id})]
-            (assoc context
-                   :response (created new-list "Location" url)
-                   :tx-data [assoc db-id new-list])))})
+       (let [throw-a-error (/ 10 0)]
+            context))})
 
 (def routes
   (route/expand-routes
-   #{["/todo" :post [error-interceptor db-interceptor list-create]]}))
+   #{["/todo" :post [error-interceptor list-create]]}))
 
 (def service-map
   {::http/routes routes
