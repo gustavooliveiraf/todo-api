@@ -53,4 +53,4 @@
 
 ## Last exercise: Capture the correct error.  
 if `(dissoc (main/test-request :post "/todo") :headers)` -> {:status 400, :body "{:error \"It's impossible to parse name.\"}"}  
-if `(dissoc (main/test-request :post "/todo?name=nubank") :headers)` -> {:status 400, :body "It's impossible to divide by zero."}   
+if `(dissoc (main/test-request :post "/todo?name=0") :headers)` -> {:status 400, :body "It's impossible to divide by zero."}   
