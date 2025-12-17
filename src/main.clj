@@ -65,6 +65,11 @@
                     {:status 400
                      :body {:error "It's impossible to divide by zero."}})
 
+             (instance? NullPointerException cause)
+             (assoc context :response
+                    {:status 400
+                     :body {:error "It's impossible to parse name."}})
+
              :else
              (assoc context :response
                     {:status 500
